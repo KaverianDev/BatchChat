@@ -64,6 +64,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 ```
+next, you gotta make the file for the messages, just create a file named messages.txt
 
 now there's one last thing left to do. port fowarding.
 the default is port 3000, however at the start of the js code, theres a variable for the port, change that if you want to.
