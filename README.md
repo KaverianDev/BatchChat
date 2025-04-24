@@ -6,6 +6,12 @@ this is pretty much just a little funny chat app i made in batch
 this has no authentication AT ALL. people can flood the chatlogs like crazy, hell probably crash your server. this probably has like infinite vulnerabilities. PLEASE DO NOT USE ON A LARGE SCALE. only with your friends probably.
 oh yeah and this chat client is really impractical. i advise you to go checkout sharp chat, however it's probably only gonna be a bit better than this but also have those vulnerabilites. + the same server implementation
 
+# Chat Commands
+
+.e is exit, or you can just do ctrl+c
+.r is refresh, or just send a message
+.m goes to the menu
+
 # Server-Side Setup
 yeah so i asked ai to do this.. here is how you do it.
 oh yeah and the instructions are for linux, figure it out windows fanboys!
