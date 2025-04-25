@@ -1,10 +1,9 @@
-# Command Chat
-this is pretty much just a little funny chat app i made in batch
+# BatchChat   
+This is a simple Batch Chat Client created entirely in Batch. Forked from CMDChat
 
 # PLEASE NOTE
 
-this has no authentication AT ALL. people can flood the chatlogs like crazy, hell probably crash your server. this probably has like infinite vulnerabilities. PLEASE DO NOT USE ON A LARGE SCALE. only with your friends probably.
-oh yeah and this chat client is really impractical. i advise you to go checkout sharp chat, however it's probably only gonna be a bit better than this but also have those vulnerabilites. + the same server implementation
+This is really NOT meant for normal use, just use it for recreation. This has no authentication so I'm not responsible for any of the damages made by this.
 
 # Chat Commands
 
