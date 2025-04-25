@@ -23,7 +23,7 @@ npm install express body-parser fs cors
 ```
 now you got the dependencies ready, so youve gotta get the actual server ready.
 
-now make a file, whatever you called but i advise you to make the file extension .js
+now make a file, preferably called chat.js, but you can name it anything ending in .js
 now put this inside that file: (or just download it as a file)
 
 ```javascript
@@ -70,11 +70,16 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 ```
+
 next, you gotta make the file for the messages, just create a file named messages.txt
 
 now there's one last thing left to do. port fowarding.
 the default is port 3000, however at the start of the js code, theres a variable for the port, change that if you want to.
 
+now all you gotta do is start the server! if everything was sucsessful, you should see "Server is running on http://localhost:3000", and if you changed the port then, it'll show that accordingly.
+```bash
+node chat.js
+```
 now your all done! happy chatting i guess
 
 # Client-Side Setup
