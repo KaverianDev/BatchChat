@@ -8,10 +8,16 @@ oh yeah and this chat client is really impractical. i advise you to go checkout 
 
 # Chat Commands
 
+Client Commands:<br>
 .e is exit, or you can just do ctrl+c<br>
 .r is refresh, or just send a message<br>
 .m goes to the menu<br>
-/ver will show server logic version
+<br>
+Server Commands:<br>
+/ver will show server logic version<br>
+/clear to clear all messages (mod only)<br>
+/stop to stop server (mod only)<br>
+/reloadmods to reload all mods and tag untagged mods (mod only)<br>
 
 # Server-Side Setup
 yeah so i asked ai to do this.. here is how you do it.
