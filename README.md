@@ -232,10 +232,12 @@ app.listen(PORT, () => {
 now there's one last thing left to do. port fowarding.
 the default is port 3000, however at the start of the js code, theres a variable for the port, change that if you want to.
 
-now all you gotta do is start the server! if everything was sucsessful, you should see "Server is running on http://localhost:3000", and if you changed the port then, it'll show that accordingly.
+now you just got to start the server, here is the command to start it
 ```bash
 node chat.js
 ```
+and everything *should* go perfectly fine, but you can create an issue if you need to, i'll respond within a day.
+
 now your all done! happy chatting i guess
 
 # How to Add Mods
