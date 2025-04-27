@@ -227,7 +227,6 @@ rl.on('line', (input) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
 ```
 
 now there's one last thing left to do. port fowarding.
