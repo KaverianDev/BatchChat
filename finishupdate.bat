@@ -1,4 +1,4 @@
-@echo off
+@echo on
 setlocal enabledelayedexpansion
 echo finishing update. do not close window.
 set sp=%programdata%\cmdchat
