@@ -5,7 +5,7 @@ cls
 echo starting..
 color E
 echo setting variables..
-set ver=2.3
+set ver=2.4
 set sp=%programdata%\cmdchat
 set "p=pause >nul"
 set ga=goto askexit
@@ -137,7 +137,6 @@ timeout /t 2 >nul
 :chatresize
 mode con lines=30 cols=110
 :chat
-cls
 curl -X GET %ip%/chat -o -
 if %errorlevel%==28 echo failed fetching messages! ^(timed out^)
 echo ______________________________________________________________________________________________________________
@@ -148,8 +147,11 @@ if "%chat%"==".e" ( exit
 ) else if "%chat%"==".m" ( goto menu
 ) else if "%chat%"==".?" ( goto cmds
 ) else (
+	cls
 	curl -X PATCH -H "Content-Type: application/json" -d "{\"username\":\"!name!\", \"message\":\"!chat!\"}" "http://!ip!/chat"
 	if %errorlevel%==28 echo failed sending messages! ^(timed out^)
+	echo.
+	echo ______________________________________________________________________________________________________________
 	goto chat
 )
 echo howd you get here? contact me because you should not be getting this message. message me @ch1ck3m on discord
