@@ -8,9 +8,10 @@ oh yeah and this chat client is really impractical. i advise you to go checkout 
 
 # Chat Commands
 
-.e is exit, or you can just do ctrl+c
-.r is refresh, or just send a message
-.m goes to the menu
+.e is exit, or you can just do ctrl+c<br>
+.r is refresh, or just send a message<br>
+.m goes to the menu<br>
+/ver will show server logic version
 
 # Server-Side Setup
 yeah so i asked ai to do this.. here is how you do it.
@@ -19,7 +20,7 @@ oh yeah and the instructions are for linux, figure it out windows fanboys!
 so first you gotta have npm installed, and you gotta run this command
 
 ```bash
-npm install express body-parser fs cors
+npm install express body-parser fs cors axios
 ```
 now you got the dependencies ready, so youve gotta get the actual server ready.
 
@@ -92,8 +93,6 @@ app.listen(PORT, () => {
 
 ```
 
-next, you gotta make the file for the messages, just create a file named messages.txt
-
 now there's one last thing left to do. port fowarding.
 the default is port 3000, however at the start of the js code, theres a variable for the port, change that if you want to.
 
@@ -103,5 +102,12 @@ node chat.js
 ```
 now your all done! happy chatting i guess
 
+# How to Add Mods
+
+this is pretty straightfoward, just type in mod (username here). howvere if you do not have terminal access, then you can find mods.json and just add a username (make sure you format it properly)<br>
+now do reloadmods in the terminal (if you don't have access to the terminal, then just wait 30s
+
+
+
 # Client-Side Setup
-well there isn't really anything to do, other than download chat.bat from the repo.
+well there isn't really anything to do, other than download chat.bat from the latest release.
