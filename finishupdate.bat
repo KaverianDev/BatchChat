@@ -1,4 +1,4 @@
-@echo on
+@echo off
 setlocal enabledelayedexpansion
 echo finishing update.
 echo do not close window.
@@ -12,10 +12,8 @@ del /q %sp%\updatenew
 set /p dir=<%sp%\cd
 del /q %sp%\cd
 cd !dir!
-pause
 del /q chat.bat
 ren chatnew.bat chat.bat
-pause
 echo update finished.
 echo starting new script.
 timeout /t 3 >nul
