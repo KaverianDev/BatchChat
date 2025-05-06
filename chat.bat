@@ -5,7 +5,7 @@ cls
 echo starting..
 color E
 echo setting variables..
-set ver=2.4
+set ver=2.5
 set sp=%programdata%\cmdchat
 set "p=pause >nul"
 set ga=goto askexit
@@ -38,9 +38,8 @@ del !sp!\update
 
 :menu
 mode con lines=12 cols=50
-cls
 echo   	  command chat - v%ver% by chicken
-if "%update%"=="%ver%" ( echo 	          up to date ) else if "%update%"=="" ( echo     	could not check for updates ) else echo        update available; v!update!, u to update.
+if "%update%"=="%ver%" ( echo 	          up to date ) else if "%update%"=="" ( echo 	    couldn't check for updates ) else echo        update available; v!update!, u to update.
 echo.
 if "%namecall%"=="none " ( echo. ) else echo  hello, %namecall%
 echo  ?. help
@@ -49,7 +48,7 @@ echo  1. connect to custom chat
 echo  2. preset 1
 echo  3. preset 2
 set /p cc=" choose an option: "
-cls
+mode con lines=30 cols=110
 if %cc%==0 ( exit
 ) else if %cc%==reset (
 	mode con lines=11 cols=50
@@ -62,7 +61,7 @@ if %cc%==0 ( exit
 ) else if %cc%==l ( set ip=192.168.1.39:3000
 ) else if %cc%==test ( set ip=127.0.0.1:3000
 ) else if %cc%==? (
-	mode con lines=20 cols=60
+	mode con lines=20 cols=75
 	echo faq:
 	echo q: why do chats not appear?
 	echo a: chats are refreshed every time you send a message,
@@ -80,19 +79,29 @@ if %cc%==0 ( exit
 	echo a: .e = exit ^(or you can do ctrl+c^)
 	echo a: .m = menu
 	echo a: .? = see this menu
+	echo a: /ver = see server logic version ^(make sure the messages dont
+	echo a: ^(continued^) fill up the screen or you won't see server version.^)
+	echo.
+	echo ^(mods only^)
+	echo a: /clear = clear messages
+	echo a: /stop = stop server
 	echo.
 	echo click any key to continue..
 	%p%
 	goto menu
-) else if "%wow%"=="u" (
+) else if "%cc%"=="u" (
 	if "!update!"=="" echo could not check for updates, so we cannot update. & %ga%
 	if "!update!"=="!ver!" echo you do not need to update! & %ga%
-	curl -s "https://github.com/chicken-projects/cmdchat/releases/download/v!update!/chat.bat" -o "chat.bat"
-	echo updated!
-	echo starting script in 3 seconds..
-	%t3%
+	curl -L -s -X GET "https://github.com/chicken-projects/cmdchat/releases/download/v!update!/chat.bat" -o "chatnew.bat"
+	echo update downloaded, clearing this version
+	echo ^(please do not do anything^)
+	echo finishing update in 2 seconds..
+	timeout /t 2 >nul
 	cls
-	"chat !update!.bat"
+	echo if you see this file, that means the update failed. >!sp!\updatenew
+	echo !cd! >!sp!\cd
+	if not exist %sp%\finishupdate.bat curl -s https://raw.githubusercontent.com/chicken-projects/cmdchat/refs/heads/main/finishupdate.bat -o %sp%\finishupdate.bat
+	"%sp%\finishupdate.bat"
 ) else if %cc%==1 ( goto customip
 ) else if %cc%==2 ( goto preset1
 ) else if %cc%==3 ( goto preset2
@@ -143,7 +152,7 @@ echo ___________________________________________________________________________
 if not defined chat echo ^(you can use .? in the chat to see chat commands^!^)
 set /p chat="send message: "
 if "%chat%"==".e" ( exit
-) else if "%chat%"==".r" ( goto chat
+) else if "%chat%"==".r" ( cls & goto chat
 ) else if "%chat%"==".m" ( goto menu
 ) else if "%chat%"==".?" ( goto cmds
 ) else (
