@@ -9,17 +9,32 @@ oh yeah and this chat client is really impractical. i am working on another proj
 # Chat Commands
 
 Client Commands:<br>
-.e is exit, or you can just do ctrl+c<br>
-.r is refresh, or just send a message<br>
-.m goes to the menu<br>
-<br>
+-  .e: exit
+-  .r: refresh chat
+-  .m: goto main menu
+-  .? see this list
 Server Commands:<br>
-/ver will show server logic version<br>
-/clear to clear all messages (mod only)<br>
-/stop to stop server (mod only)<br>
-/reloadmods to reload all mods and tag untagged mods (mod only)<br>
+-  /ver: show server logic version
+-  /stats: show server uptime and messages sent
+-  /clear: delete all messages (mod only)
+-  /stop: stop server (mod only)
+-  /reloadmods: apply new mods (mod only)
+-  /mod <user>: add new mod (mod only)
+-  /demod <user>: remove mod (mod only)
+-  /fakesay <user> <message>: impersonate a user saying something (mod only)
 Terminal Commands:<br>
-ver, clear, stop, reloadmods, mod <user>, demod <user>, mods, say <msg>, fakesay <user> <msg>, watch <br>
+-  ver: show server logic version
+-  clear: delete all messages
+-  stop: stop server
+-  reloadmods: apply new mods
+-  mod <user>: mod a user
+-  demod <user>: demod a user
+-  mods: list mods
+-  say <msg>: chat as the server
+-  fakesay <user> <message>: impersonate a user saying something
+-  watch: basically turn server into client (server will still function, type exit to exit)
+-  stats: show server uptime and messages sent
+
 
 # Server-Side Setup
 so first you gotta have node.js installed, and you gotta run this command
